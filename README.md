@@ -1,109 +1,86 @@
 # 📊 Supermarket Sales Data Analysis
+## 📌 Project Overview
 
-## 📌 Deskripsi Proyek
+This project analyzes supermarket transaction data to uncover sales trends, customer purchasing behavior, product performance, and business insights that can support strategic decision-making.
 
-Proyek ini berisi analisis data penjualan supermarket untuk memahami **pola penjualan, perilaku pelanggan, tingkat kepuasan, serta faktor-faktor yang memengaruhi pendapatan dan profit**. Analisis dilakukan menggunakan Python dengan fokus pada eksplorasi data (EDA) dan penarikan insight bisnis.
+The analysis focuses on identifying:
 
-Dataset yang digunakan merupakan data transaksi supermarket yang mencakup informasi produk, pelanggan, waktu transaksi, metode pembayaran, hingga rating pelanggan.
+* Key revenue drivers
+* Customer behavior patterns
+* Product performance
+* Transaction trends over time
+* Factors influencing profit generation
 
----
+The dataset contains transactional records including customer information, product categories, payment methods, sales values, ratings, and purchase timestamps.
 
-## 📂 Struktur Dataset
+🎯 Objectives
+* Analyze sales and profit performance across branches and cities
+* Identify the highest-performing product lines
+* Understand customer purchasing behavior
+* Explore transaction trends by time and payment method
+* Measure relationships between numerical business metrics
+* Determine the factors most influencing Gross Income
 
-Dataset memiliki beberapa kolom utama berikut:
+## 📂 Dataset Features
+Main columns used in the analysis:
+* **Invoice ID**
+* **Branch**
+* **City**
+* **Customer Type**
+* **Gender**
+* **Product Line**
+* **Unit Price**
+* **Quantity**
+* **Tax 5%**
+* **Sales / Total**
+* **COGS**
+* **Gross Income**
+* **Date & Time**
+* **Payment**
+* **Rating**
 
-* **Invoice ID**: ID unik untuk setiap transaksi
-* **Branch**: Cabang supermarket
-* **City**: Kota cabang supermarket
-* **Customer Type**: Member atau Normal
-* **Gender**: Jenis kelamin pelanggan
-* **Product Line**: Kategori produk
-* **Unit Price**: Harga satuan produk
-* **Quantity**: Jumlah item yang dibeli
-* **Tax 5%**: Pajak 5% dari transaksi
-* **Sales / Total**: Total nilai transaksi (termasuk pajak)
-* **COGS**: Cost of Goods Sold
-* **Gross Income**: Keuntungan dari transaksi
-* **Date & Time**: Waktu transaksi
-* **Payment**: Metode pembayaran
-* **Rating**: Penilaian pelanggan (1–10)
+## 📈 Analysis Process
+1. Data Cleaning & Preparation
+* Datetime conversion
+* Missing value checking
+* Feature extraction (hour, day, month)
+2. Exploratory Data Analysis (EDA)
+* Sales trend analysis
+* Customer segmentation
+* Product performance analysis
+* Payment behavior analysis
+* Time-based transaction analysis
+3. Statistical Analysis
+* Correlation analysis
+* Comparative analysis
+* Distribution analysis
 
----
+## 🔍 Key Insights
+* Quantity shows the strongest relationship with Gross Income, indicating that purchase volume is the primary profit driver.
+* Food and Beverages generated high customer satisfaction ratings.
+* Members contributed more consistently to total sales compared to Normal customers.
+* Female customers contributed higher total spending across several product lines.
+* Cash and E-wallet were the most commonly used payment methods.
+* Peak transaction activity occurred during evening hours.
+* Customer ratings showed weak correlation with transaction value, suggesting satisfaction is influenced more by service and product quality than spending amount.
 
-## 🎯 Tujuan Analisis
+## 📊 Dashboard & Visualization
+The project includes:
+* Sales performance dashboard
+* Product line comparison
+* Customer segmentation visuals
+* Payment method analysis
+* Time-based sales trends
+* Correlation heatmaps
 
-* Mengidentifikasi **kontributor utama penjualan dan profit**
-* Memahami **perilaku pelanggan** berdasarkan tipe, gender, dan waktu
-* Menganalisis **hubungan antar variabel numerik** (Sales, Quantity, Rating, Gross Income)
-* Menentukan **faktor paling berpengaruh terhadap Gross Income**
-
----
-
-## ❓ Pertanyaan Analisis Utama
-
-1. Cabang/kota mana yang memiliki penjualan dan profit tertinggi?
-2. Product line apa yang paling berkontribusi terhadap pendapatan?
-3. Apakah terdapat perbedaan pola pembelian antara Member dan Normal?
-4. Bagaimana pengaruh metode pembayaran terhadap nilai dan jumlah transaksi?
-5. Kapan waktu penjualan paling tinggi (tanggal, bulan, jam)?
-6. Apakah gender memengaruhi jenis produk yang dibeli dan total belanja?
-7. Product line mana dengan tingkat kepuasan tertinggi dan terendah?
-8. Apakah jumlah pembelian (Quantity) berhubungan dengan total pendapatan?
-9. Apakah nilai transaksi yang lebih tinggi menghasilkan rating lebih baik?
-10. Faktor apa yang paling berpengaruh terhadap Gross Income?
-
----
-
-## 📈 Metodologi Analisis
-
-* **Data Cleaning & Feature Engineering**
-
-  * Ekstraksi jam, hari, dan bulan dari kolom datetime
-* **Exploratory Data Analysis (EDA)**
-
-  * Barplot untuk data kategorikal
-  * Scatterplot & Regplot untuk hubungan numerik
-  * Boxplot untuk distribusi dan perbandingan
-* **Statistik Pendukung**
-
-  * Rata-rata, total, min–max
-  * Korelasi Pearson
-
----
-
-## 🔍 Insight Utama
-
-* **Quantity adalah faktor paling berpengaruh terhadap Gross Income** (korelasi ≈ 0.71)
-* **Unit Price juga berpengaruh kuat**, namun di bawah Quantity
-* **Tidak terdapat hubungan signifikan antara Sales dan Rating**
-* **Member** berkontribusi lebih besar terhadap penjualan dan kuantitas dibanding Normal
-* **Food and Beverages** memiliki tingkat kepuasan pelanggan tertinggi
-* **Pelanggan perempuan** mendominasi total belanja di hampir semua product line
-* Metode pembayaran **Cash dan Ewallet** memiliki kontribusi transaksi tertinggi
-
----
-
-## 🛠️ Tools & Library
-
+## 🛠️ Tools & Technologies
 * Python
 * Pandas
 * NumPy
 * Matplotlib
 * Seaborn
+* Jupyter Notebook
 
----
-
-## 📌 Kesimpulan
-
-Analisis ini menunjukkan bahwa peningkatan **volume pembelian** merupakan strategi paling efektif untuk meningkatkan profit. Faktor non-finansial seperti **kualitas produk dan pelayanan** lebih berpengaruh terhadap kepuasan pelanggan dibandingkan nilai transaksi.
-
----
-
-## 🚀 Pengembangan Lanjutan
-
-* Analisis regresi multivariat
-* Segmentasi pelanggan (clustering)
-* Dashboard interaktif (Streamlit / Tableau)
-* Prediksi penjualan dan profit
-
----
+## 📌 Conclusion
+The analysis indicates that increasing purchase quantity has the greatest impact on improving profitability. Customer satisfaction appears to be influenced more by shopping experience and product quality rather than transaction size alone.
+This project demonstrates an end-to-end data analysis workflow, from data cleaning and exploration to visualization and business insight generation.
